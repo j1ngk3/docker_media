@@ -1,0 +1,53 @@
+version: "2"
+
+services:
+
+  jackett:
+    extends:
+      file: jackett/docker-compose.yml
+      service: jackett
+  
+  plex:
+    extends:
+      file: plex/docker-compose.yml
+      service: plex
+
+  plexpy:
+    extends:
+      file: plexpy/docker-compose.yml
+      service: plexpy
+
+  plexrequests:
+    extends:
+      file: plexrequests/docker-compose.yml
+      service: plexrequests
+
+  portainer:
+    extends:
+      file: portainer/docker-compose.yml
+      service: portainer
+
+  radarr:
+    extends:
+      file: radarr/docker-compose.yml
+      service: radarr
+
+  sonarr:
+    extends:
+      file: sonarr/docker-compose.yml
+      service: sonarr
+
+  transmission:
+    extends:
+      file: transmission/docker-compose.yml
+      service: transmission
+
+  watchtower:
+    extends:
+      file: watchtower/docker-compose.yml
+      service: watchtower
+
+  calibre:
+    extends:
+      file: calibre/docker-compose.yml
+      service: calibre

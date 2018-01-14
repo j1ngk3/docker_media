@@ -1,0 +1,18 @@
+version: "2"
+
+services:
+
+  radarr:
+    image: jingke/radarr_sickbeard_mp4_automator
+    container_name: radarr
+    ports: [ "127.0.0.1:7878:7878" ]
+    volumes:
+    - "${CONFIG_DIR}/radarr:/config"
+    - "${CONFIG_DIR}/scripts:/scripts"
+    - "${DATA_DIR}/movies:/movies"
+    - "${DOWNLOAD_DIR}:/downloads"
+    environment:
+    - "PUID=${PUID}"
+    - "PGID=${PGID}"
+    - "TZ=${TZ}"
+    restart: always

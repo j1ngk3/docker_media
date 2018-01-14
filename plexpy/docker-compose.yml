@@ -1,0 +1,15 @@
+version: "2"
+
+services:
+
+  plexpy:
+    image: linuxserver/plexpy  
+    container_name: plexpy
+    ports: [ "127.0.0.1:8181:8181"]
+    volumes:
+    - "${CONFIG_DIR}/plexpy:/config"
+    environment:
+    - "PUID=${PUID}"
+    - "PGID=${PGID}"
+    - "TZ=${TZ}"
+    restart: always

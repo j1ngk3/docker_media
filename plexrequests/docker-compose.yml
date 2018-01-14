@@ -1,0 +1,15 @@
+version: "2"
+
+services:
+
+  plexrequests:
+    image: linuxserver/plexrequests
+    container_name: plexrequests
+    ports: [ "127.0.0.1:3000:3000"]
+    volumes:
+    - "${CONFIG_DIR}/plexrequests:/config"
+    - /etc/localtime:/etc/localtime:ro
+    environment:
+    - "PUID=${PUID}"
+    - "PGID=${PGID}"
+    restart: always

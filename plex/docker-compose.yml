@@ -1,0 +1,21 @@
+version: "2"
+
+services:
+
+ plex:
+   image: linuxserver/plex
+   container_name: plex
+   network_mode: "host"
+   volumes:
+   - "${CONFIG_DIR}/plex:/config"
+   - "${DATA_DIR}/movies:/data/movies"
+   - "${DATA_DIR}/tv:/data/tv"
+   - "${DATA_DIR}/anime:/data/anime"
+   environment:
+   - "PUID=${PUID}"
+   - "PGID=${PGID}"
+   - "VERSION=latest"
+   - "TZ=${TZ}"
+   devices:
+   - /dev/dri:/dev/dri
+   restart: always

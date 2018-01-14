@@ -1,0 +1,17 @@
+version: "2"
+
+services:
+
+  calibre:
+    image: jingke/calibre_kindlegen
+    container_name: calibre
+    environment:
+    - "TZ=${TZ}"
+    - "PUID=${PUID}"
+    - "PGID=${PGID}"
+    ports: 
+    - "8083:8083"
+    volumes:
+    - "${CONFIG_DIR}/calibre:/config"
+    - "${CONFIG_DIR}/calibre/library:/books"
+    restart: always

@@ -1,0 +1,16 @@
+version: "2"
+
+services:
+
+  jackett:
+    image: linuxserver/jackett
+    container_name: jackett
+    ports: [ "9117:9117"]
+    volumes:
+    - "${CONFIG_DIR}/jackett:/config"
+    - "${DOWNLOAD_DIR}:/downloads"
+    environment:
+    - "PUID=${PUID}"
+    - "PGID=${PGID}"
+    - "TZ=${TZ}"
+    restart: always
