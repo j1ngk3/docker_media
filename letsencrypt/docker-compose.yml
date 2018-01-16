@@ -1,0 +1,23 @@
+version: "2"
+
+services:
+
+  letsencrypt:
+    image: linuxserver/letsencrypt
+    container_name: letsencrypt
+    ports: 
+    - "443:443"
+    - "80:80"
+    volumes:
+    - "${CONFIG_DIR}/letsencrypt:/config"
+    environment:
+    - "PUID=${PUID}"
+    - "EMAIL=${EMAIL}"
+    - "URL=${URL}"
+    - "SUBDOMAINS=${SUB}"
+    - "ONLY_SUBDOMAINS=true"
+    - "PGID=${PGID}"
+    - "TZ=${TZ}"
+    - "DHLEVEL=4096"
+    - "HTTPVAL=true"
+    restart: always

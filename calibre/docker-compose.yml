@@ -9,8 +9,6 @@ services:
     - "TZ=${TZ}"
     - "PUID=${PUID}"
     - "PGID=${PGID}"
-    ports: 
-    - "8083:8083"
     volumes:
     - "${CONFIG_DIR}/calibre:/config"
     - "${CONFIG_DIR}/calibre/library:/books"

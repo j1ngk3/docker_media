@@ -2,6 +2,40 @@ version: "2"
 
 services:
 
+  letsencrypt:
+    extends:
+     file: letsencrypt/docker-compose.yml
+     service: letsencrypt
+    depends_on:
+      - ddclient
+      - jackett
+      - plex
+      - plexpy
+      - plexrequests
+      - portainer
+      - radarr
+      - sonarr
+      - transmission
+      - watchtower
+      - calibre
+      - unifi
+      - openvpn
+ 
+  ddclient:
+    extends:
+      file: ddclient/docker-compose.yml
+      service: ddclient
+
+  openvpn:
+    extends:
+      file: openvpn/docker-compose.yml
+      service: openvpn
+
+  unifi:
+    extends:
+      file: unifi/docker-compose.yml
+      service: unifi
+
   jackett:
     extends:
       file: jackett/docker-compose.yml

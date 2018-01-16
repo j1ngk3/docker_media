@@ -5,7 +5,6 @@ services:
   sonarr:
     image: jingke/sonarr_sickbeard_mp4_automator
     container_name: sonarr
-    ports: [ "127.0.0.1:8989:8989" ]
     volumes:
     - "${CONFIG_DIR}/sonarr:/config"
     - "${CONFIG_DIR}/scripts:/scripts"
