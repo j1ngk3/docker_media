@@ -11,7 +11,7 @@ services:
       - jackett
       - plex
       - plexpy
-      - plexrequests
+      - ombi
       - portainer
       - radarr
       - sonarr
@@ -51,10 +51,10 @@ services:
       file: plexpy/docker-compose.yml
       service: plexpy
 
-  plexrequests:
+  ombi:
     extends:
-      file: plexrequests/docker-compose.yml
-      service: plexrequests
+      file: ombi/docker-compose.yml
+      service: ombi
 
   portainer:
     extends:
