@@ -1,0 +1,14 @@
+version: "2"
+
+services:
+
+  ombi:
+    image: linuxserver/ombi
+    container_name: ombi
+    volumes:
+    - "${CONFIG_DIR}/ombi:/config"
+    - /etc/localtime:/etc/localtime:ro
+    environment:
+    - "PUID=${PUID}"
+    - "PGID=${PGID}"
+    restart: always
