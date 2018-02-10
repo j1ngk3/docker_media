@@ -17,4 +17,16 @@ transcoding files.  See sickbeard_mp4_automator README for info.
 Adding a .env file at the root allows you to set the environment variables needed by the compose file in a persistent manner.
 See [here](https://docs.docker.com/compose/environment-variables/#the-env-file) for more info.  If you do this, you can start
 the services up by running docker-compose up -d in the root directory of the project rather than using the helper script.
+Required environment variables to set:
 
+* CONFIG_DIR
+* DOWNLOAD_DIR
+* DATA_DIR
+* PUID
+* PGID
+* TZ
+* HOSTNAME
+* EMAIL
+* URL
+* SUB
+* INTERFACE
