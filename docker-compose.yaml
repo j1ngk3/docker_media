@@ -12,24 +12,17 @@ services:
       - plex
       - plexpy
       - ombi
-      - portainer
       - radarr
       - sonarr
       - transmission
       - watchtower
       - calibre
       - unifi
-      - openvpn
  
   ddclient:
     extends:
       file: ddclient/docker-compose.yml
       service: ddclient
-
-  openvpn:
-    extends:
-      file: openvpn/docker-compose.yml
-      service: openvpn
 
   unifi:
     extends:
@@ -55,11 +48,6 @@ services:
     extends:
       file: ombi/docker-compose.yml
       service: ombi
-
-  portainer:
-    extends:
-      file: portainer/docker-compose.yml
-      service: portainer
 
   radarr:
     extends:
