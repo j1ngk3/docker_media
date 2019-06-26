@@ -14,7 +14,7 @@ services:
    environment:
    - "PUID=${PUID}"
    - "PGID=${PGID}"
-   - "VERSION=latest"
+   - "VERSION=public"
    - "TZ=${TZ}"
    devices:
    - /dev/dri:/dev/dri
