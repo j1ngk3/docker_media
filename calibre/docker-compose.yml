@@ -9,6 +9,7 @@ services:
     - "TZ=${TZ}"
     - "PUID=${PUID}"
     - "PGID=${PGID}"
+    - "DOCKER_MODS=linuxserver/calibre-web:calibre"
     volumes:
     - "${CONFIG_DIR}/calibre:/config"
     - "${CONFIG_DIR}/calibre/library:/books"
