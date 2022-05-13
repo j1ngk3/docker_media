@@ -12,3 +12,5 @@ services:
     - "PUID=${PUID}"
     - "PGID=${PGID}"
     restart: always
+    security_opt:
+      - seccomp=unconfined
