@@ -10,6 +10,7 @@ services:
    - "${CONFIG_DIR}/plex:/config"
    - "${DATA_DIR}/movies:/data/movies"
    - "${DATA_DIR}/tv:/data/tv"
+   - "${DATA_DIR}/4k:/data/4k"
    - "${DATA_DIR}/anime:/data/anime"
    environment:
    - "PUID=${PUID}"
